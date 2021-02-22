@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+/home/peterpetrekanics/Documents/from_Marci/atomikos/eclipse/eclipse_workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3565359699.index
+/springexample/src/main/java
