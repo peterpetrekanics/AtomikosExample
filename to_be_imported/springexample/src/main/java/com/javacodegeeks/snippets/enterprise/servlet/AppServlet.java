@@ -2,6 +2,7 @@ package com.javacodegeeks.snippets.enterprise.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -24,14 +25,24 @@ implements HttpRequestHandler {
 
 	public void handleRequest(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+
+		
+		LocalDateTime now = LocalDateTime.now();
+//		int year = now.getYear();
+//		int month = now.getMonthValue();
+		int day = now.getDayOfMonth();
+		int hour = now.getHour();
+		int minute = now.getMinute();
+		int seconds = now.getSecond();
+		
 		EmployeeA em1 = new EmployeeA();
-		em1.setId(123);
+		em1.setId(100*hour + minute);;
 		em1.setName("John");
-		em1.setAge(35);
+		em1.setAge(seconds);
 		EmployeeB em2 = new EmployeeB();
-		em2.setId(123);
+		em2.setId(100*hour + minute);;
 		em2.setName("Mary");
-		em2.setAge(31);
+		em2.setAge(seconds);
 
 		try {
 			employeeService.persistEmployees(em1, em2);
